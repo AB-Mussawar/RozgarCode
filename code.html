@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rozgarcode | Premier Graphic Design, Web &amp; IT Solutions Agency</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; background-color: #080c14; }
+      body { overscroll-behavior: none; font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Space Grotesk', sans-serif; }
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #080c14; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #009cff; }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 28s linear infinite;
+    }
+
+    /* 60FPS SMOOTH ORBIT SYSTEM (Inspired by Webcomforts graphic branding hero) */
+    @keyframes orbit-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes orbit-counter-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 0.85; filter: drop-shadow(0 0 35px rgba(0, 156, 255, 0.45)); }
+      50% { transform: scale(1.04); opacity: 1; filter: drop-shadow(0 0 55px rgba(168, 85, 247, 0.65)); }
+    }
+    @keyframes float-badge {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .orbit-system-track {
+      animation: orbit-spin 36s linear infinite;
+    }
+    .orbit-system-track:hover {
+      animation-play-state: paused;
+    }
+    .orbit-counter-node {
+      animation: orbit-counter-spin 36s linear infinite;
+    }
+    .orbit-system-track:hover .orbit-counter-node {
+      animation-play-state: paused;
+    }
+    .pulse-glow-center {
+      animation: pulse-glow 6s ease-in-out infinite, float-badge 4s ease-in-out infinite;
+    }
+
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-obsidian": "#080c14",
+            "surface-slate": "#0F172A",
+            "surface-card": "#131C31",
+            "surface-container": "#1c1f29",
+            "primary": "#009cff",
+            "primary-container": "#0052cc",
+            "primary-fixed": "#9dcaff",
+            "secondary": "#4ae176",
+            "secondary-container": "#00b954",
+            "glow-blue": "rgba(0, 156, 255, 0.25)",
+            "glow-green": "rgba(74, 225, 118, 0.22)",
+            "border-subtle": "rgba(255, 255, 255, 0.08)",
+            "text-muted": "#94a3b8"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#080c14] text-[#dfe2ef] font-sans antialiased selection:bg-[#4ae176]/30 selection:text-white">
+<!-- 1. TOP UTILITY STRIP (Pakistan, UK, Australia direct flags + contact) -->
+<div class="w-full bg-[#05070d] border-b border-white/5 text-xs text-slate-400 py-2 relative z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
+<!-- Direct International Contact Numbers -->
+<div class="flex items-center flex-wrap gap-3 sm:gap-5">
+<a class="flex items-center gap-1.5 hover:text-[#4ae176] transition-colors" href="tel:+923335030930" title="Pakistan Islamabad HQ">
+<span class="text-sm">🇵🇰</span>
+<span class="font-medium text-slate-300">+92 333 5030930</span>
+</a>
+<span class="text-slate-700 hidden sm:inline">|</span>
+<a class="flex items-center gap-1.5 hover:text-[#009cff] transition-colors" href="tel:+447417360028" title="UK Regional Office">
+<span class="text-sm">🇬🇧</span>
+<span class="font-medium text-slate-300">+44 7417 360028</span>
+</a>
+<span class="text-slate-700 hidden md:inline">|</span>
+<a class="flex items-center gap-1.5 hover:text-emerald-400 transition-colors" href="tel:+61470302915" title="Australia Regional Office">
+<span class="text-sm">🇦🇺</span>
+<span class="font-medium text-slate-300">+61 470 302 915</span>
+</a>
+<span class="text-slate-700 hidden lg:inline">|</span>
+<a class="hidden lg:flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 transition-colors" href="https://wa.me/923335030930" target="_blank">
+<span class="w-2 h-2 rounded-full bg-[#4ae176] animate-ping"></span>
+<span class="font-semibold text-[11px]">Direct WhatsApp Active</span>
+</a>
+</div>
+<!-- Quick Utility Links & Instant Audit Tool -->
+<div class="flex items-center gap-4 ml-auto">
+<div class="hidden xl:flex items-center gap-4 text-slate-400">
+<a class="hover:text-white transition-colors" href="#services">Services</a>
+<a class="hover:text-white transition-colors" href="#portfolio">Case Studies</a>
+<a class="hover:text-white transition-colors" href="#framework">Process</a>
+<a class="hover:text-white transition-colors" href="#faq">FAQ</a>
+</div>
+<a class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-blue-600/20 to-emerald-500/20 border border-blue-500/40 text-blue-300 hover:text-white hover:border-emerald-400/60 transition-all font-semibold tracking-wide text-[11px] shadow-[0_0_15px_rgba(0,156,255,0.2)]" href="#audit">
+<span class="w-1.5 h-1.5 rounded-full bg-[#4ae176] animate-pulse"></span>
+<span>⚡ Free Technical Site Audit</span>
+</a>
+</div>
+</div>
+</div>
+<!-- FLOATING GLASSMORPHIC MAIN NAV WITH WEBGRAPHICS RICH MEGA-MENU -->
+<header class="sticky top-0 inset-x-0 z-40 backdrop-blur-xl bg-[#080c14]/90 border-b border-white/10 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Official Rozgarcode Brand Logo -->
+<a class="flex items-center gap-3.5 group" href="#">
+<div class="relative p-1 rounded-xl bg-[#0f172a] border border-white/10 shadow-[0_0_20px_rgba(0,156,255,0.25)] group-hover:border-blue-500/50 transition-all">
+<img alt="Rozgarcode Official Logo" class="h-10 w-10 sm:h-11 sm:w-11 object-contain rounded-lg group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpywdKLapYws5KlQH-O9eGvUPZB59VnVuj8fJ7So_hJcUEZbOXq8XkBLJ43BfMa7Ysf_dnuqtGCJKQ-4TTC4ofAWjxi-ilgSuN5xK3y1X2I2Rl7--_5v9DbPD_pQxbW1cZt0-p8W9yhubtOZEwd-Xhw3FsSzfvg1BFvl6fwiSxbetzup15qT3PY7nyrQ-rIwwAbmaNacz5sByOhL1y0P13M3otQpfb1tyg7YT58b5Th5ALUjy7VQq6DGkd6aWic18eJc4"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xl sm:text-2xl font-bold font-display tracking-tight text-white leading-none">
+            ROZGAR<span class="text-[#4ae176]">CODE</span>
+</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">Design, Web &amp; IT Agency</span>
+</div>
+</a>
+<!-- Desktop Nav Links with Full Mega Menu Architecture -->
+<nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-slate-300">
+<!-- 1. Rich Services Mega-Menu (Webcomforts style) -->
+<div class="relative group py-2">
+<button class="flex items-center gap-1 hover:text-[#9dcaff] transition-colors">
+<span>Services</span>
+<span class="material-symbols-outlined text-base group-hover:rotate-180 transition-transform">expand_more</span>
+</button>
+<div class="absolute top-full -left-20 hidden group-hover:block w-[780px] p-6 bg-[#0a0f1d]/95 rounded-3xl shadow-2xl border border-white/10 backdrop-blur-2xl transition-all">
+<div class="grid grid-cols-4 gap-6">
+<!-- Build Column -->
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-400 border-b border-white/10 pb-2">
+<span class="material-symbols-outlined text-sm">laptop_mac</span>
+<span>Build</span>
+</div>
+<ul class="space-y-2 text-xs text-slate-300">
+<li><a class="hover:text-blue-400 block py-1" href="#services">Custom Web Design</a></li>
+<li><a class="hover:text-blue-400 block py-1" href="#services">WordPress &amp; Astra Pro</a></li>
+<li><a class="hover:text-blue-400 block py-1" href="#services">Shopify &amp; E-Commerce</a></li>
+<li><a class="hover:text-blue-400 block py-1" href="#services">Mobile Applications</a></li>
+<li><a class="hover:text-blue-400 block py-1" href="#services">API &amp; SaaS Systems</a></li>
+</ul>
+</div>
+<!-- Brand Column -->
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-400 border-b border-white/10 pb-2">
+<span class="material-symbols-outlined text-sm">palette</span>
+<span>Brand &amp; Design</span>
+</div>
+<ul class="space-y-2 text-xs text-slate-300">
+<li><a class="hover:text-purple-400 block py-1" href="#services">Logo &amp; Brand Identity</a></li>
+<li><a class="hover:text-purple-400 block py-1" href="#services">Graphic Design Kits</a></li>
+<li><a class="hover:text-purple-400 block py-1" href="#services">3D Visual Creatives</a></li>
+<li><a class="hover:text-purple-400 block py-1" href="#services">Print-Ready Collateral</a></li>
+<li><a class="hover:text-purple-400 block py-1" href="#services">UI/UX Figma Systems</a></li>
+</ul>
+</div>
+<!-- Grow Column -->
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-400 border-b border-white/10 pb-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>Grow &amp; Scale</span>
+</div>
+<ul class="space-y-2 text-xs text-slate-300">
+<li><a class="hover:text-emerald-400 block py-1" href="#services">SEO Optimization</a></li>
+<li><a class="hover:text-emerald-400 block py-1" href="#services">Social Media Growth</a></li>
+<li><a class="hover:text-emerald-400 block py-1" href="#services">Google &amp; Meta Ads</a></li>
+<li><a class="hover:text-emerald-400 block py-1" href="#services">Viral Reels &amp; TikToks</a></li>
+<li><a class="hover:text-emerald-400 block py-1" href="#services">Content Copywriting</a></li>
+</ul>
+</div>
+<!-- Host & IT Column -->
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyan-400 border-b border-white/10 pb-2">
+<span class="material-symbols-outlined text-sm">dns</span>
+<span>Host &amp; IT</span>
+</div>
+<ul class="space-y-2 text-xs text-slate-300">
+<li><a class="hover:text-cyan-400 block py-1" href="#services">Cloud Hosting &amp; Domain</a></li>
+<li><a class="hover:text-cyan-400 block py-1" href="#services">24/7 IT Infrastructure</a></li>
+<li><a class="hover:text-cyan-400 block py-1" href="#services">Point of Sale (POS)</a></li>
+<li><a class="hover:text-cyan-400 block py-1" href="#services">Inventory Systems</a></li>
+<li><a class="hover:text-cyan-400 block py-1" href="#services">Cybersecurity Audit</a></li>
+</ul>
+</div>
+</div>
+<!-- Mega Menu Bottom Banner -->
+<div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs bg-white/[0.02] p-3 rounded-2xl">
+<span class="text-slate-300 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
+Ready to upgrade your brand or infrastructure?
+</span>
+<a class="text-blue-400 font-bold hover:underline flex items-center gap-1" href="#contact">
+Book Free Strategy Call <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<a class="hover:text-[#9dcaff] transition-colors" href="#portfolio">Case Studies</a>
+<a class="hover:text-[#9dcaff] transition-colors" href="#framework">Process</a>
+<a class="hover:text-[#9dcaff] transition-colors" href="#matrix">All 16 Services</a>
+<a class="hover:text-[#9dcaff] transition-colors" href="#audit">Free Site Audit</a>
+<a class="hover:text-[#9dcaff] transition-colors" href="#faq">FAQ</a>
+<a class="hover:text-[#9dcaff] transition-colors" href="#reviews">Reviews</a>
+</nav>
+<!-- Action CTAs -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#00b954]/15 border border-[#4ae176]/30 text-emerald-300 hover:bg-[#00b954]/25 hover:text-white text-xs font-bold transition-all shadow-[0_0_12px_rgba(74,225,118,0.15)]" href="https://wa.me/923335030930" target="_blank">
+<span class="material-symbols-outlined text-base">chat</span>
+<span>WhatsApp Us</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-[#4ae176] text-white text-xs sm:text-sm font-bold shadow-[0_0_25px_rgba(0,156,255,0.4)] hover:shadow-[0_0_35px_rgba(74,225,118,0.5)] hover:scale-[1.02] active:scale-[0.98] transition-all" href="#contact">
+<span>Get Free Proposal</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<!-- 2. HIGH-IMPACT HERO SECTION WITH EXACT ROTATING ORBITAL RING GRAPHIC (From IMAGE_4) -->
+<section class="relative w-full overflow-hidden pt-8 pb-20 lg:pt-14 lg:pb-28">
+<!-- Subtle Grid Texture & Ambient Luminous Mesh Glows -->
+<div class="pointer-events-none absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:32px_32px] opacity-25"></div>
+<div class="pointer-events-none absolute -top-40 right-10 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-purple-600/25 via-blue-600/20 to-[#4ae176]/15 blur-3xl opacity-75"></div>
+<div class="pointer-events-none absolute top-1/4 -left-32 w-[550px] h-[550px] rounded-full bg-blue-600/15 blur-3xl opacity-60"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- Breadcrumb Header Inspired by Webcomforts image -->
+<div class="flex items-center gap-2 text-xs text-slate-400 mb-6">
+<a class="hover:text-white flex items-center gap-1" href="#"><span class="material-symbols-outlined text-sm">home</span></a>
+<span>•</span>
+<a class="hover:text-white" href="#services">Services</a>
+<span>•</span>
+<span class="text-blue-400 font-semibold">Graphic Design &amp; Digital Solutions</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Hero Left Column: Headline & Value Proposition -->
+<div class="lg:col-span-6 xl:col-span-7 flex flex-col items-start gap-6">
+<!-- Pill Agency Tag Badge (as seen in Image 4) -->
+<div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-[0_0_20px_rgba(0,156,255,0.15)]">
+<span class="w-2.5 h-2.5 rounded-full bg-[#4ae176] shadow-[0_0_8px_#4ae176] animate-pulse"></span>
+<span class="text-[11px] sm:text-xs font-bold tracking-widest text-slate-200 uppercase font-display">
+              GRAPHIC DESIGN &amp; IT SERVICES
+            </span>
+</div>
+<!-- Main Headline with dual accent color gradients from reference -->
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-white leading-[1.12]">
+            Graphic Design &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Branding</span> Agency
+          </h1>
+<p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+            We provide comprehensive graphic design services including <strong>branding, packaging, billboards, business cards, letterheads, website banners, icons, social media creatives, videos</strong> and <strong>high-performance WordPress, Next.js &amp; IT solutions</strong>.
+          </p>
+<p class="text-sm sm:text-base font-semibold text-[#009cff] flex items-center gap-2">
+            Browse our latest graphic design &amp; IT engineering projects below.
+          </p>
+<!-- Action Buttons styled after Image 4 -->
+<div class="flex flex-wrap items-center gap-4 pt-1">
+<a class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#009cff] hover:bg-[#008be5] text-white font-bold text-sm sm:text-base shadow-[0_0_30px_rgba(0,156,255,0.5)] hover:scale-105 active:scale-95 transition-all" href="#portfolio">
+<span>VIEW PORTFOLIO</span>
+</a>
+<a class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-white font-bold text-sm sm:text-base transition-all backdrop-blur-md hover:border-emerald-400/40" href="#contact">
+<span>START A PROJECT</span>
+</a>
+</div>
+<!-- Bottom Tag Pills from reference image -->
+<div class="flex flex-wrap items-center gap-2.5 pt-3">
+<div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-white/10 text-xs text-slate-300">
+<span class="material-symbols-outlined text-sm text-[#009cff]">palette</span>
+<span>Full Branding</span>
+</div>
+<div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-white/10 text-xs text-slate-300">
+<span class="material-symbols-outlined text-sm text-[#4ae176]">smartphone</span>
+<span>Social Creatives</span>
+</div>
+<div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-white/10 text-xs text-slate-300">
+<span class="material-symbols-outlined text-sm text-cyan-400">print</span>
+<span>Print Ready</span>
+</div>
+<div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-white/10 text-xs text-slate-300">
+<span class="material-symbols-outlined text-sm text-pink-400">all_inclusive</span>
+<span>Unlimited Revisions</span>
+</div>
+</div>
+</div>
+<!-- Hero Right Column: EXACT ROTATING ORBITAL RING GRAPHIC (Image 4 Recreation) -->
+<div class="lg:col-span-6 xl:col-span-5 flex items-center justify-center relative py-6">
+<div class="relative w-[360px] h-[360px] sm:w-[460px] sm:h-[460px] flex items-center justify-center select-none">
+<!-- Outer Concentric Dashed Orbital Ring with Glowing Nodes -->
+<div class="absolute inset-2 sm:inset-3 rounded-full border border-dashed border-cyan-400/25 pointer-events-none"></div>
+<div class="absolute inset-8 sm:inset-10 rounded-full border border-dotted border-purple-400/30 pointer-events-none"></div>
+<!-- Decorative Floating Background Shapes (as in Image 4) -->
+<div class="absolute top-10 left-4 w-7 h-7 rounded-lg bg-amber-600/60 rotate-12 blur-[0.5px]"></div>
+<div class="absolute top-8 right-12 w-10 h-10 rounded-full border-2 border-cyan-400/40"></div>
+<div class="absolute bottom-16 left-6 w-0 h-0 border-l-[14px] border-l-transparent border-r-[14px] border-r-transparent border-b-[24px] border-b-purple-500/70 rotate-[-25deg]"></div>
+<!-- The 360-Degree Continuous Smooth Rotating Ring Track -->
+<div class="absolute inset-0 orbit-system-track rounded-full pointer-events-auto">
+<!-- Orbit Node 1: Mobile Apps / Smartphone (Top ~0 deg) -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="orbit-counter-node">
+<div class="group relative flex items-center justify-center w-11 h-11 sm:w-13 sm:h-13 rounded-2xl bg-[#0f172a]/90 border border-cyan-400/40 shadow-[0_0_20px_rgba(0,156,255,0.35)] backdrop-blur-xl hover:scale-125 hover:border-cyan-300 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-cyan-300 text-xl sm:text-2xl">smartphone</span>
+<span class="absolute -top-8 px-2 py-0.5 rounded-md bg-slate-900 border border-white/20 text-[10px] font-bold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Mobile Apps</span>
+</div>
+</div>
+</div>
+<!-- Orbit Node 2: Print Ready / Collateral (Top-Right ~55 deg) -->
+<div class="absolute top-[16%] right-[12%]">
+<div class="orbit-counter-node">
+<div class="group relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#0f172a]/90 border border-purple-400/40 shadow-[0_0_20px_rgba(168,85,247,0.35)] backdrop-blur-xl hover:scale-125 hover:border-purple-300 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-purple-300 text-xl sm:text-2xl">print</span>
+<span class="absolute -top-8 px-2 py-0.5 rounded-md bg-slate-900 border border-white/20 text-[10px] font-bold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Print Ready</span>
+</div>
+</div>
+</div>
+<!-- Orbit Node 3: Graphic Design & Palette (Right-Bottom ~120 deg) -->
+<div class="absolute top-[62%] right-[5%]">
+<div class="orbit-counter-node">
+<div class="group relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#0f172a]/90 border border-blue-400/40 shadow-[0_0_20px_rgba(0,156,255,0.35)] backdrop-blur-xl hover:scale-125 hover:border-blue-300 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-blue-300 text-xl sm:text-2xl">palette</span>
+<span class="absolute -top-8 px-2 py-0.5 rounded-md bg-slate-900 border border-white/20 text-[10px] font-bold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Design Systems</span>
+</div>
+</div>
+</div>
+<!-- Orbit Node 4: Web Development & Code (Bottom ~180 deg) -->
+<div class="absolute bottom-1 left-1/2 -translate-x-1/2 translate-y-1/2">
+<div class="orbit-counter-node">
+<div class="group relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#0f172a]/90 border border-emerald-400/40 shadow-[0_0_20px_rgba(74,225,118,0.35)] backdrop-blur-xl hover:scale-125 hover:border-emerald-300 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[#4ae176] text-xl sm:text-2xl">code</span>
+<span class="absolute -bottom-8 px-2 py-0.5 rounded-md bg-slate-900 border border-white/20 text-[10px] font-bold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Web Development</span>
+</div>
+</div>
+</div>
+<!-- Orbit Node 5: SEO Content & Articles (Left-Middle ~240 deg) -->
+<div class="absolute top-[58%] left-[4%]">
+<div class="orbit-counter-node">
+<div class="group relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#0f172a]/90 border border-teal-400/40 shadow-[0_0_20px_rgba(45,212,191,0.35)] backdrop-blur-xl hover:scale-125 hover:border-teal-300 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-teal-300 text-xl sm:text-2xl">article</span>
+<span class="absolute -top-8 px-2 py-0.5 rounded-md bg-slate-900 border border-white/20 text-[10px] font-bold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">SEO &amp; Content</span>
+</div>
+</div>
+</div>
+<!-- Orbit Node 6: Cloud IT & DevOps (Top-Left ~300 deg) -->
+<div class="absolute top-[18%] left-[12%]">
+<div class="orbit-counter-node">
+<div class="group relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#0f172a]/90 border border-sky-400/40 shadow-[0_0_20px_rgba(56,189,248,0.35)] backdrop-blur-xl hover:scale-125 hover:border-sky-300 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-sky-300 text-xl sm:text-2xl">dns</span>
+<span class="absolute -top-8 px-2 py-0.5 rounded-md bg-slate-900 border border-white/20 text-[10px] font-bold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Cloud IT &amp; Security</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Center Floating Glassmorphic Badge with Rozgarcode Emblem (exact replica of Image 4) -->
+<div class="relative z-20 pulse-glow-center">
+<div class="relative w-44 h-44 sm:w-56 sm:h-56 rounded-3xl p-1 bg-gradient-to-tr from-cyan-500/40 via-purple-500/50 to-blue-500/40 shadow-[0_0_60px_rgba(168,85,247,0.4)] backdrop-blur-2xl">
+<div class="w-full h-full rounded-[22px] bg-[#0b1020]/90 border border-white/20 flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Vibrant Radial Gradient Backdrop -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(168,85,247,0.45)_0%,_rgba(0,156,255,0.25)_45%,_transparent_75%)]"></div>
+<!-- Rozgarcode Icon Symbol (Stylized Greek Phi / {D emblem as in Image 4) -->
+<div class="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center">
+<svg class="w-16 h-16 sm:w-20 sm:h-20 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 48 48">
+<!-- Stylized Circle with Vertical Bisecting Line -->
+<circle cx="24" cy="24" r="14" stroke="currentColor"></circle>
+<line stroke="currentColor" stroke-linecap="round" x1="24" x2="24" y1="4" y2="44"></line>
+</svg>
+</div>
+<!-- Subtitle Badge below emblem -->
+<span class="relative z-10 text-[10px] sm:text-xs font-bold tracking-widest uppercase text-cyan-300 font-display mt-1">
+                  ROZGARCODE
+                </span>
+<!-- Subtle bottom glowing accent strip -->
+<div class="absolute bottom-0 inset-x-6 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Color Palette / Status Dots Pill from Image 4 (Under the center badge) -->
+<div class="absolute bottom-2 sm:bottom-4 z-30 flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#0a1122]/90 border border-white/15 backdrop-blur-xl shadow-2xl">
+<span class="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></span>
+<span class="w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_8px_#a855f7]"></span>
+<span class="w-3 h-3 rounded-full bg-pink-500 shadow-[0_0_8px_#ec4899]"></span>
+<span class="w-3 h-3 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b]"></span>
+<span class="w-3 h-3 rounded-full bg-[#4ae176] shadow-[0_0_8px_#4ae176]"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quantitative Metrics Bar -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-12 mt-12 w-full border-t border-white/10">
+<div>
+<div class="text-3xl font-extrabold font-display text-white">500<span class="text-[#4ae176]">+</span></div>
+<div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mt-1">Projects Delivered</div>
+</div>
+<div>
+<div class="text-3xl font-extrabold font-display text-white">99.8<span class="text-[#009cff]">%</span></div>
+<div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mt-1">PageSpeed Avg</div>
+</div>
+<div>
+<div class="text-3xl font-extrabold font-display text-white">10x<span class="text-[#4ae176]">+</span></div>
+<div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mt-1">Organic Social Reach</div>
+</div>
+<div>
+<div class="text-3xl font-extrabold font-display text-white">15<span class="text-[#009cff]">+</span></div>
+<div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mt-1">Global Industry Awards</div>
+</div>
+</div>
+</div>
+<!-- Webcomforts-style Marquee Ticker Strip -->
+<div class="mt-16 w-full py-3.5 bg-[#0b101d] border-y border-white/10 overflow-hidden relative">
+<div class="animate-marquee whitespace-nowrap text-xs sm:text-sm font-semibold tracking-wider uppercase text-slate-300">
+<span class="mx-6 flex items-center gap-2"><span class="text-[#4ae176]">⚡</span> Custom WordPress &amp; Astra Pro</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#009cff]">⚡</span> Next.js &amp; Headless Stack</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#4ae176]">⚡</span> High-Growth Social Media</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#009cff]">⚡</span> 3D Graphic Design &amp; Brand Systems</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#4ae176]">⚡</span> 24/7 Cloud IT &amp; Cybersecurity</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#009cff]">⚡</span> High-Converting WooCommerce &amp; Shopify</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#4ae176]">⚡</span> Search Engine Optimization (SEO)</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#009cff]">⚡</span> Custom Web &amp; Mobile Applications</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#4ae176]">⚡</span> Custom WordPress &amp; Astra Pro</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#009cff]">⚡</span> Next.js &amp; Headless Stack</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#4ae176]">⚡</span> High-Growth Social Media</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#009cff]">⚡</span> 3D Graphic Design &amp; Brand Systems</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#4ae176]">⚡</span> 24/7 Cloud IT &amp; Cybersecurity</span>
+<span class="mx-6 flex items-center gap-2"><span class="text-[#009cff]">⚡</span> High-Converting WooCommerce &amp; Shopify</span>
+</div>
+</div>
+</section>
+<!-- 3. FOUR CORE SPECIALIZED PILLARS (Clean high-contrast cards) -->
+<section class="w-full py-24 bg-[#0a0e1a] relative border-b border-white/5" id="services">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="text-xs uppercase font-extrabold tracking-widest text-[#4ae176]">What We Do Best</span>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight mt-2">
+          Full-Spectrum Digital &amp; IT Solutions
+        </h2>
+<p class="text-slate-400 text-sm sm:text-base mt-3">
+          High-velocity creative design, bulletproof software engineering, and data-driven marketing engineered to outrank competition.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Pillar 1: Web Development -->
+<div class="p-8 sm:p-10 rounded-3xl bg-[#0f172a]/70 border border-white/10 hover:border-blue-500/50 hover:shadow-[0_0_35px_rgba(0,156,255,0.2)] transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">desktop_windows</span>
+</div>
+<span class="text-3xl font-black font-display text-slate-700 group-hover:text-blue-400/40 transition-colors">01</span>
+</div>
+<h3 class="text-2xl font-bold font-display text-white mb-3">Website Design &amp; Development</h3>
+<p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+              High-converting storefronts and responsive web portals. We specialize in WordPress Astra Pro architecture, Gutenberg block frameworks, headless Next.js, and Shopify stores delivering sub-second load times.
+            </p>
+<ul class="space-y-2.5 text-sm font-medium text-slate-300">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#4ae176] text-lg">check_circle</span>
+<span>Custom Astra Pro, Blocks &amp; ACF Pro Architecture</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#4ae176] text-lg">check_circle</span>
+<span>Next.js, React, Tailwind &amp; Headless CMS</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#4ae176] text-lg">check_circle</span>
+<span>High-Converting WooCommerce &amp; Shopify Stores</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+<span class="text-sm font-bold text-white group-hover:text-blue-400 transition-colors">Explore Web Architecture</span>
+<span class="w-9 h-9 rounded-full bg-white/5 border border-white/10 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Pillar 2: Social Media Management -->
+<div class="p-8 sm:p-10 rounded-3xl bg-[#0f172a]/70 border border-white/10 hover:border-emerald-500/50 hover:shadow-[0_0_35px_rgba(74,225,118,0.2)] transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-[#4ae176] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#4ae176] group-hover:text-black transition-all">
+<span class="material-symbols-outlined text-3xl">share</span>
+</div>
+<span class="text-3xl font-black font-display text-slate-700 group-hover:text-emerald-400/40 transition-colors">02</span>
+</div>
+<h3 class="text-2xl font-bold font-display text-white mb-3">Social Media Management &amp; Growth</h3>
+<p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+              Convert passive followers into loyal paying advocates. We produce viral short-form Reels, TikToks, high-impact LinkedIn B2B thought leadership, and ROI-positive Meta &amp; Google ad funnels.
+            </p>
+<ul class="space-y-2.5 text-sm font-medium text-slate-300">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-blue-400 text-lg">check_circle</span>
+<span>End-to-End Instagram, LinkedIn &amp; TikTok Management</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-blue-400 text-lg">check_circle</span>
+<span>Viral Video Creation &amp; High-Retention Motion Graphics</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-blue-400 text-lg">check_circle</span>
+<span>Performance Paid Ad Funnels (Meta, TikTok &amp; YouTube)</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+<span class="text-sm font-bold text-white group-hover:text-[#4ae176] transition-colors">Explore Social Growth</span>
+<span class="w-9 h-9 rounded-full bg-white/5 border border-white/10 group-hover:bg-[#4ae176] group-hover:text-black flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Pillar 3: Graphic Design & Branding -->
+<div class="p-8 sm:p-10 rounded-3xl bg-[#0f172a]/70 border border-white/10 hover:border-blue-500/50 hover:shadow-[0_0_35px_rgba(0,156,255,0.2)] transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">brush</span>
+</div>
+<span class="text-3xl font-black font-display text-slate-700 group-hover:text-blue-400/40 transition-colors">03</span>
+</div>
+<h3 class="text-2xl font-bold font-display text-white mb-3">Graphic Design &amp; Creative Branding</h3>
+<p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+              Distinguished visual identities that command respect. Scalable Figma design systems, corporate brand identity kits, 3D product renders, advertising banners, and pitch decks engineered to persuade.
+            </p>
+<ul class="space-y-2.5 text-sm font-medium text-slate-300">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#4ae176] text-lg">check_circle</span>
+<span>Complete Brand Guidelines, Logos &amp; Typography</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#4ae176] text-lg">check_circle</span>
+<span>3D Visual Assets, Modern Banners &amp; Marketing Kits</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#4ae176] text-lg">check_circle</span>
+<span>High-Fidelity Figma UI/UX Prototypes &amp; Design Systems</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+<span class="text-sm font-bold text-white group-hover:text-blue-400 transition-colors">Explore Creative Branding</span>
+<span class="w-9 h-9 rounded-full bg-white/5 border border-white/10 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Pillar 4: End-to-End IT Services -->
+<div class="p-8 sm:p-10 rounded-3xl bg-[#0f172a]/70 border border-white/10 hover:border-emerald-500/50 hover:shadow-[0_0_35px_rgba(74,225,118,0.2)] transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-[#4ae176] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#4ae176] group-hover:text-black transition-all">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+<span class="text-3xl font-black font-display text-slate-700 group-hover:text-emerald-400/40 transition-colors">04</span>
+</div>
+<h3 class="text-2xl font-bold font-display text-white mb-3">End-to-End IT Services &amp; Solutions</h3>
+<p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+              Industrial-strength code and cloud architecture. Custom web software, iOS &amp; Android cross-platform apps, GraphQL/REST API bridges, Cloudflare optimization, and 24/7 dedicated IT infrastructure support.
+            </p>
+<ul class="space-y-2.5 text-sm font-medium text-slate-300">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-blue-400 text-lg">check_circle</span>
+<span>Custom SaaS Platforms, Web Portals &amp; API Integrations</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-blue-400 text-lg">check_circle</span>
+<span>Mobile App Engineering (React Native &amp; Flutter)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-blue-400 text-lg">check_circle</span>
+<span>Cloud Infrastructure, Cybersecurity &amp; 24/7 IT Care</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+<span class="text-sm font-bold text-white group-hover:text-[#4ae176] transition-colors">Explore IT Solutions</span>
+<span class="w-9 h-9 rounded-full bg-white/5 border border-white/10 group-hover:bg-[#4ae176] group-hover:text-black flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. WEBCOMFORTS-STYLE 'EVERYTHING YOUR WEBSITE NEEDS' 16-SERVICE INTERACTIVE MATRIX -->
+<section class="w-full py-24 bg-[#080c14] relative border-b border-white/5" id="matrix">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs uppercase font-extrabold tracking-widest text-blue-400">Digital Services</span>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight mt-2">
+          Everything your website needs
+        </h2>
+<p class="text-slate-400 text-sm sm:text-base mt-2">
+          From first sketch to first sale — design, development, promotion and round-the-clock support, all in one place.
+        </p>
+</div>
+<!-- 16-Box Grid directly inspired by webcomforts.com -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- 1 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-blue-500/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400 group-hover:scale-110 transition-transform">laptop_mac</span>
+<span class="text-xs sm:text-sm font-bold text-white">Custom Web Design</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 2 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-[#4ae176]/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] group-hover:scale-110 transition-transform">shopping_bag</span>
+<span class="text-xs sm:text-sm font-bold text-white">Shopify &amp; E-Comm</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-[#4ae176] group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 3 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-blue-500/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400 group-hover:scale-110 transition-transform">code</span>
+<span class="text-xs sm:text-sm font-bold text-white">WordPress &amp; Astra</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 4 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-[#4ae176]/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] group-hover:scale-110 transition-transform">trending_up</span>
+<span class="text-xs sm:text-sm font-bold text-white">SEO Optimization</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-[#4ae176] group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 5 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-blue-500/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400 group-hover:scale-110 transition-transform">auto_awesome</span>
+<span class="text-xs sm:text-sm font-bold text-white">Logo &amp; Branding</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 6 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-[#4ae176]/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] group-hover:scale-110 transition-transform">palette</span>
+<span class="text-xs sm:text-sm font-bold text-white">Graphic Design</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-[#4ae176] group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 7 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-blue-500/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400 group-hover:scale-110 transition-transform">phone_iphone</span>
+<span class="text-xs sm:text-sm font-bold text-white">Mobile Applications</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 8 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-[#4ae176]/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] group-hover:scale-110 transition-transform">edit_note</span>
+<span class="text-xs sm:text-sm font-bold text-white">Content Writing</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-[#4ae176] group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 9 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-blue-500/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400 group-hover:scale-110 transition-transform">dns</span>
+<span class="text-xs sm:text-sm font-bold text-white">Domain &amp; Hosting</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 10 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-[#4ae176]/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] group-hover:scale-110 transition-transform">cloud</span>
+<span class="text-xs sm:text-sm font-bold text-white">Cloud IT &amp; DevOps</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-[#4ae176] group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 11 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-blue-500/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400 group-hover:scale-110 transition-transform">hub</span>
+<span class="text-xs sm:text-sm font-bold text-white">API Integration</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 12 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-[#4ae176]/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] group-hover:scale-110 transition-transform">point_of_sale</span>
+<span class="text-xs sm:text-sm font-bold text-white">Point of Sale (POS)</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-[#4ae176] group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 13 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-blue-500/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400 group-hover:scale-110 transition-transform">campaign</span>
+<span class="text-xs sm:text-sm font-bold text-white">Social Marketing</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 14 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-[#4ae176]/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] group-hover:scale-110 transition-transform">ads_click</span>
+<span class="text-xs sm:text-sm font-bold text-white">Google &amp; Meta Ads</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-[#4ae176] group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 15 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-blue-500/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400 group-hover:scale-110 transition-transform">support_agent</span>
+<span class="text-xs sm:text-sm font-bold text-white">IT Consulting</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+<!-- 16 -->
+<a class="p-4 sm:p-5 rounded-2xl bg-[#0e1627] border border-white/10 hover:border-[#4ae176]/50 hover:bg-[#121c33] transition-all flex items-center justify-between group" href="#contact">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] group-hover:scale-110 transition-transform">inventory_2</span>
+<span class="text-xs sm:text-sm font-bold text-white">Inventory Systems</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm group-hover:text-[#4ae176] group-hover:translate-x-0.5 transition-all">arrow_outward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 5. FREE TECHNICAL & SEO AUDIT BANNER -->
+<section class="w-full py-16 bg-[#080c14] relative" id="audit">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="relative rounded-3xl p-8 sm:p-12 overflow-hidden bg-gradient-to-r from-[#0d1629] via-[#101b33] to-[#0a1224] border border-blue-500/30 shadow-[0_0_50px_rgba(0,156,255,0.18)]">
+<!-- Glow Orbs -->
+<div class="pointer-events-none absolute -right-20 -top-20 w-80 h-80 rounded-full bg-emerald-500/20 blur-3xl"></div>
+<div class="pointer-events-none absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-blue-600/20 blur-3xl"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Text Details -->
+<div class="lg:col-span-7 flex flex-col gap-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-xs font-bold uppercase tracking-wider w-max">
+<span class="material-symbols-outlined text-sm">health_and_safety</span>
+<span>Free Instant Technical Site Audit</span>
+</div>
+<h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-white tracking-tight">
+              Stay healthy. Get recommended.
+            </h3>
+<p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              If search engines and AI crawlers cannot parse, index, and understand your website structure in milliseconds, they will not rank it. Test your speed, mobile responsiveness, and technical SEO in 60 seconds.
+            </p>
+</div>
+<!-- Interactive Audit Input Form -->
+<div class="lg:col-span-5">
+<form class="flex flex-col sm:flex-row gap-2.5" onsubmit="event.preventDefault(); alert('Running technical crawl on ' + document.getElementById('audit-url').value + '. Complete report will be dispatched in 60 seconds.');">
+<input class="flex-grow px-4 py-3.5 rounded-2xl bg-[#090d16] border border-white/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="audit-url" placeholder="https://yourwebsite.com" required="" type="url"/>
+<button class="whitespace-nowrap px-6 py-3.5 rounded-2xl bg-gradient-to-r from-orange-500 via-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-sm shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all flex items-center justify-center gap-2" type="submit">
+<span>Run Free Audit</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</form>
+<p class="text-[11px] text-slate-400 mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-emerald-400">check_circle</span>
+<span>No credit card required • Instant automated Core Web Vitals diagnostic</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. THE ROZGARCODE 4-STEP FRAMEWORK -->
+<section class="w-full py-24 bg-[#0a0e1a] relative border-b border-white/5" id="framework">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs uppercase font-extrabold tracking-widest text-[#4ae176]">How We Work</span>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight mt-2">
+          A clear path from idea to launch
+        </h2>
+<p class="text-slate-400 text-sm sm:text-base mt-2">
+          A proven, transparent 4-stage pipeline that eliminates surprises and delivers predictable growth.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Step 1 -->
+<div class="p-7 rounded-3xl bg-[#0f172a] border border-white/10 hover:border-blue-400/50 hover:-translate-y-1 transition-all group">
+<div class="flex items-center justify-between mb-4">
+<span class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 font-bold flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">search</span>
+</span>
+<span class="text-2xl font-black font-display text-slate-600 group-hover:text-blue-400/50 transition-colors">01</span>
+</div>
+<h4 class="text-xl font-bold font-display text-white mb-2">Discover</h4>
+<p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            We learn your business goals, target audience, technical hurdles, and direct competitors to shape the winning strategy.
+          </p>
+</div>
+<!-- Step 2 -->
+<div class="p-7 rounded-3xl bg-[#0f172a] border border-white/10 hover:border-emerald-400/50 hover:-translate-y-1 transition-all group">
+<div class="flex items-center justify-between mb-4">
+<span class="w-10 h-10 rounded-xl bg-emerald-500/10 text-[#4ae176] font-bold flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">palette</span>
+</span>
+<span class="text-2xl font-black font-display text-slate-600 group-hover:text-emerald-400/50 transition-colors">02</span>
+</div>
+<h4 class="text-xl font-bold font-display text-white mb-2">Design</h4>
+<p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            We craft a bespoke, conversion-focused interactive design system and Figma mockups that authentically reflect your brand.
+          </p>
+</div>
+<!-- Step 3 -->
+<div class="p-7 rounded-3xl bg-[#0f172a] border border-white/10 hover:border-blue-400/50 hover:-translate-y-1 transition-all group">
+<div class="flex items-center justify-between mb-4">
+<span class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 font-bold flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">code</span>
+</span>
+<span class="text-2xl font-black font-display text-slate-600 group-hover:text-blue-400/50 transition-colors">03</span>
+</div>
+<h4 class="text-xl font-bold font-display text-white mb-2">Develop</h4>
+<p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            We code fast, responsive, SEO-ready architectures with clean code, Astra/Next.js frameworks, and API integrations.
+          </p>
+</div>
+<!-- Step 4 -->
+<div class="p-7 rounded-3xl bg-[#0f172a] border border-white/10 hover:border-emerald-400/50 hover:-translate-y-1 transition-all group">
+<div class="flex items-center justify-between mb-4">
+<span class="w-10 h-10 rounded-xl bg-emerald-500/10 text-[#4ae176] font-bold flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+</span>
+<span class="text-2xl font-black font-display text-slate-600 group-hover:text-emerald-400/50 transition-colors">04</span>
+</div>
+<h4 class="text-xl font-bold font-display text-white mb-2">Grow &amp; Scale</h4>
+<p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            We optimize conversion funnels, track organic rankings, run targeted marketing campaigns, and keep improving performance.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. RECENT CLIENT CASE STUDIES -->
+<section class="w-full py-24 bg-[#080c14] relative border-b border-white/5" id="portfolio">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div>
+<span class="text-xs uppercase font-extrabold tracking-widest text-[#4ae176]">Measurable Outcomes</span>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight mt-2">
+            Selected client case studies
+          </h2>
+</div>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors" href="#contact">
+<span>Explore All 500+ Projects</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="rounded-3xl bg-[#0e1627] border border-white/10 overflow-hidden group flex flex-col justify-between hover:border-blue-500/50 transition-all">
+<div class="relative w-full h-64 overflow-hidden bg-slate-900">
+<img alt="Fintech Dashboard interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXXDTUdVgKju-B9g-9dcwyfZOSXPGwFDQMKyWC0g3OIQOoeE8KgZW2j05hjeinYcrC6bfoNUgpjye-eQyZKBJUd6uEQlHkIsv8iTt8RBjwAASdiSg9ThM5N9arJ2eC42uiBGreNJVmV4xMALPQ6C_2nmY26BP26MmJoezL7T-iMAP-Ouny6klSYwZ4LVrq-bcODx7ATXaWshm5pl1CJFKZq3I4pNtO5E2WEuRuDQj3lu7r5eo_TGSwUA"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-xs font-bold border border-white/10">SaaS &amp; Astra</span>
+<span class="px-3 py-1 rounded-full bg-emerald-500 text-white text-xs font-bold">+210% Conversions</span>
+</div>
+</div>
+<div class="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+<div>
+<span class="text-xs font-bold text-[#4ae176] uppercase tracking-wider">Web &amp; IT Architecture</span>
+<h3 class="text-xl font-bold font-display text-white mt-1 mb-2">Veloce Pay Core SaaS Engine</h3>
+<p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                Engineered ultra-fast decoupled web architecture with Stripe billing and 0.3s page loading speed, tripling paid signup rates.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-blue-400 font-bold text-xs sm:text-sm">
+<span>Read Case Study</span>
+<span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="rounded-3xl bg-[#0e1627] border border-white/10 overflow-hidden group flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+<div class="relative w-full h-64 overflow-hidden bg-slate-900">
+<img alt="Luxury E-Commerce showcase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlqr1PUWuztyteCWl0fHurYbm38OXdH-DNwui0YXDR61PtJgno0uKOGe9wwX5jlvAaAuYtzEECoFk33jGbHQJCids3tInYUH2ivd4MtIohXAP3Ep6c5l3daEjkovrMolOfsG1szxho1jMCiC6OPvXRkkViE6Iv_UiNQh7VqA2vbxso4ZXYqhoQ4zRjck32s_Ba6MMXYqdIiEKxgVnM2JV8HCcQrz8eMjcb7COUwuVxnBy7EeObVD7VIw"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-xs font-bold border border-white/10">Branding &amp; Social</span>
+<span class="px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold">$2.4M Sales</span>
+</div>
+</div>
+<div class="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+<div>
+<span class="text-xs font-bold text-blue-400 uppercase tracking-wider">E-Commerce &amp; Social Growth</span>
+<h3 class="text-xl font-bold font-display text-white mt-1 mb-2">Kroma Audio Gear Rebrand</h3>
+<p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                Bespoke visual brand guidelines, viral TikTok creator campaign, and lightning-fast WooCommerce setup generating 4.5x ROAS.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-[#4ae176] font-bold text-xs sm:text-sm">
+<span>Read Case Study</span>
+<span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="rounded-3xl bg-[#0e1627] border border-white/10 overflow-hidden group flex flex-col justify-between hover:border-blue-500/50 transition-all">
+<div class="relative w-full h-64 overflow-hidden bg-slate-900">
+<img alt="Cloud IT &amp; Security" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY4uX2v5A9ukf7jUhB-qw71NAcggMPoyBwFudpTkOwKftY01Iyx6VzvIGFn4S86XS1z4cFjxlnxp6-LQNM-keQ7y86Bon5bv48HVzFMYO2yyyq7sbYMTK5Ui6sqyw9JzIYMWBK1FqeQhfscie99mQL4E-aNNuXcRSxLUrfhS4ae5O5HZmYM6Z_0stY3GFWAkHckaiI_g5Japj2Itqj0GyUxlMiUyhEatpNJ1woH3vT3TE05y654iJRhA"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-xs font-bold border border-white/10">Enterprise IT</span>
+<span class="px-3 py-1 rounded-full bg-emerald-500 text-white text-xs font-bold">99.9% Uptime</span>
+</div>
+</div>
+<div class="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+<div>
+<span class="text-xs font-bold text-[#4ae176] uppercase tracking-wider">Cloud IT &amp; Security</span>
+<h3 class="text-xl font-bold font-display text-white mt-1 mb-2">Aura Network Cloud Infrastructure</h3>
+<p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                End-to-end cloud security architecture, real-time node cluster monitoring, and high-performance Web3 front-end integration.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-blue-400 font-bold text-xs sm:text-sm">
+<span>Read Case Study</span>
+<span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. FAQ ACCORDION -->
+<section class="w-full py-24 bg-[#0a0e1a] relative border-b border-white/5" id="faq">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<span class="text-xs uppercase font-extrabold tracking-widest text-[#4ae176]">FAQ</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white tracking-tight mt-2">
+          Questions, answered
+        </h2>
+<p class="text-slate-400 text-sm mt-2">Everything you need to know about partnering with Rozgarcode.</p>
+</div>
+<div class="space-y-4">
+<!-- Q1 -->
+<details class="group rounded-2xl bg-[#0f172a] border border-white/10 p-5 open:bg-[#121c33] transition-all">
+<summary class="flex items-center justify-between cursor-pointer font-bold text-white text-sm sm:text-base">
+<span>What does a full-service digital agency like Rozgarcode do?</span>
+<span class="material-symbols-outlined text-blue-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/10 pt-4">
+            We plan, design, develop, and grow your entire digital footprint — from bespoke WordPress &amp; Astra websites and headless apps to viral social media content, brand identity kits, and 24/7 cloud IT monitoring under one single expert roof.
+          </div>
+</details>
+<!-- Q2 -->
+<details class="group rounded-2xl bg-[#0f172a] border border-white/10 p-5 open:bg-[#121c33] transition-all">
+<summary class="flex items-center justify-between cursor-pointer font-bold text-white text-sm sm:text-base">
+<span>Why do you recommend WordPress with Astra Pro &amp; Next.js?</span>
+<span class="material-symbols-outlined text-blue-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/10 pt-4">
+            Astra Pro paired with custom Gutenberg blocks delivers 100/100 Google Core Web Vitals with zero bloated page builder lag. When headless Next.js or React is integrated, it provides unmatched speed, airtight security, and smooth editorial controls.
+          </div>
+</details>
+<!-- Q3 -->
+<details class="group rounded-2xl bg-[#0f172a] border border-white/10 p-5 open:bg-[#121c33] transition-all">
+<summary class="flex items-center justify-between cursor-pointer font-bold text-white text-sm sm:text-base">
+<span>How long does a typical website and branding project take?</span>
+<span class="material-symbols-outlined text-blue-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/10 pt-4">
+            A focused modern website or rebrand takes between 2 to 4 weeks. Larger custom enterprise platforms or SaaS portals typically range from 6 to 10 weeks with weekly sprint demonstrations and transparent progress logs.
+          </div>
+</details>
+<!-- Q4 -->
+<details class="group rounded-2xl bg-[#0f172a] border border-white/10 p-5 open:bg-[#121c33] transition-all">
+<summary class="flex items-center justify-between cursor-pointer font-bold text-white text-sm sm:text-base">
+<span>Do you offer continuous support and IT management after launch?</span>
+<span class="material-symbols-outlined text-blue-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/10 pt-4">
+            Yes. Every package includes a post-launch warranty, and we provide dedicated monthly maintenance retainer plans covering server security, automated daily cloud backups, SEO tracking, and ongoing content updates.
+          </div>
+</details>
+</div>
+</div>
+</section>
+<!-- 9. CLIENT REVIEWS & SOCIAL PROOF -->
+<section class="w-full py-20 bg-[#080c14] relative border-b border-white/5" id="reviews">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-4 flex flex-col gap-3">
+<div class="flex items-center gap-1 text-emerald-400">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="text-3xl font-extrabold font-display text-white leading-tight">4.9/5 Across 250+ Verified Client Reviews</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+            CEOs, enterprise IT directors, and marketing leaders trust Rozgarcode to deliver game-changing design and flawless engineering.
+          </p>
+<div class="pt-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[#4ae176] text-lg">verified</span>
+<span class="text-xs font-bold text-slate-300">100% Quality &amp; On-Time Delivery Guarantee</span>
+</div>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-8 rounded-3xl bg-[#0e1627] border border-white/10 flex flex-col justify-between">
+<p class="text-slate-300 text-sm italic mb-6">
+              “Rozgarcode overhauled our company website and took over our social media channels. In only 90 days, our inbound leads spiked by 180% and our brand finally looks like a Fortune 500 company.”
+            </p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-black flex items-center justify-center text-sm border border-blue-500/30">
+                MC
+              </div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-white">Marcus Chen</span>
+<span class="text-xs text-slate-400">VP of Growth • CloudPulse Tech</span>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-3xl bg-[#0e1627] border border-white/10 flex flex-col justify-between">
+<p class="text-slate-300 text-sm italic mb-6">
+              “Their IT services and custom software team are world-class. They built our mobile application and set up 24/7 server monitoring with zero hiccups. Rozgarcode is genuinely our most trusted tech partner.”
+            </p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-emerald-500/20 text-[#4ae176] font-black flex items-center justify-center text-sm border border-emerald-500/30">
+                ER
+              </div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-white">Elena Rostova</span>
+<span class="text-xs text-slate-400">Chief Technology Officer • Nexus Pay</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. INTERACTIVE CONSULTATION & PROPOSAL FORM -->
+<section class="w-full py-24 bg-[#080c14] relative" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="relative w-full rounded-3xl bg-gradient-to-br from-[#0c1424] via-[#0f1b33] to-[#0a101f] p-8 sm:p-12 lg:p-16 text-white overflow-hidden shadow-2xl border border-white/10">
+<!-- Glow Orbs -->
+<div class="pointer-events-none absolute -right-20 -bottom-20 w-[450px] h-[450px] rounded-full bg-gradient-to-br from-blue-600/30 to-[#4ae176]/20 blur-3xl"></div>
+<div class="pointer-events-none absolute -left-20 -top-20 w-[350px] h-[350px] rounded-full bg-blue-600/20 blur-3xl"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Info Block -->
+<div class="lg:col-span-6 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 w-max">
+<span class="w-2 h-2 rounded-full bg-[#4ae176] animate-pulse"></span>
+<span class="text-xs font-bold text-emerald-300 uppercase tracking-wider">Accepting New Client Projects</span>
+</div>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight leading-tight">
+              Let’s build something extraordinary together.
+            </h2>
+<p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Book a complimentary 30-minute discovery consultation. Our principal architects will audit your current website, social strategy, and IT stack with concrete actionable recommendations.
+            </p>
+<div class="space-y-3 pt-2 text-slate-300 text-sm font-medium">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] text-lg">check_circle</span>
+<span>Fast 2-hour response turnaround time</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] text-lg">check_circle</span>
+<span>Fixed-price transparent milestone contracts</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4ae176] text-lg">check_circle</span>
+<span>Direct WhatsApp engineer access</span>
+</div>
+</div>
+</div>
+<!-- Right Interactive Estimate Form -->
+<div class="lg:col-span-6 bg-[#090e1c]/80 backdrop-blur-2xl p-6 sm:p-8 rounded-2xl border border-white/15 shadow-2xl">
+<form class="flex flex-col gap-4" onsubmit="event.preventDefault(); alert('Thank you! Your project request has been received. Our team will contact you within 2 hours.');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-slate-300" for="client-name">Your Name</label>
+<input class="px-4 py-2.5 rounded-xl bg-[#0e1627] text-white placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 border border-white/10" id="client-name" placeholder="Alex Morgan" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-slate-300" for="client-email">Business Email</label>
+<input class="px-4 py-2.5 rounded-xl bg-[#0e1627] text-white placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 border border-white/10" id="client-email" placeholder="alex@company.com" required="" type="email"/>
+</div>
+</div>
+<!-- Service Checkboxes -->
+<div class="flex flex-col gap-2 pt-1">
+<label class="text-xs font-semibold text-slate-300">Services Needed (Select all that apply):</label>
+<div class="grid grid-cols-2 gap-2 text-xs">
+<label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0e1627] border border-white/10 hover:bg-white/5 cursor-pointer transition-colors">
+<input checked="" class="rounded text-blue-600 focus:ring-0 bg-transparent" type="checkbox"/>
+<span>Website Design &amp; Dev</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0e1627] border border-white/10 hover:bg-white/5 cursor-pointer transition-colors">
+<input class="rounded text-[#4ae176] focus:ring-0 bg-transparent" type="checkbox"/>
+<span>Social Media &amp; Growth</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0e1627] border border-white/10 hover:bg-white/5 cursor-pointer transition-colors">
+<input class="rounded text-blue-600 focus:ring-0 bg-transparent" type="checkbox"/>
+<span>Graphic Design &amp; Brand</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0e1627] border border-white/10 hover:bg-white/5 cursor-pointer transition-colors">
+<input class="rounded text-[#4ae176] focus:ring-0 bg-transparent" type="checkbox"/>
+<span>IT Services &amp; Apps</span>
+</label>
+</div>
+</div>
+<!-- Budget Range Selector -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-slate-300" for="project-budget">Estimated Budget</label>
+<select class="px-4 py-2.5 rounded-xl bg-[#0e1627] text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 border border-white/10" id="project-budget">
+<option>$2,500 – $5,000 (Starter Project)</option>
+<option selected="">$5,000 – $15,000 (Growth &amp; Scale)</option>
+<option>$15,000 – $35,000 (Full-Suite Agency)</option>
+<option>$35,000+ (Custom Enterprise / IT)</option>
+</select>
+</div>
+<!-- Submit Button -->
+<button class="mt-2 w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-[#4ae176] text-white font-extrabold text-sm shadow-[0_0_25px_rgba(0,156,255,0.4)] hover:opacity-95 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2" type="submit">
+<span>Get Free Proposal &amp; Technical Roadmap</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 11. GLOBAL HUBS FOOTPRINT (Pakistan, UK, Australia) -->
+<section class="w-full py-16 bg-[#060910] border-t border-white/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-10">
+<h3 class="text-xl font-bold font-display text-white uppercase tracking-widest">Global Agency Presence</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Pakistan Hub -->
+<div class="p-6 rounded-2xl bg-[#0b101c] border border-white/10 flex flex-col items-center text-center">
+<span class="text-3xl mb-2">🇵🇰</span>
+<h4 class="font-bold text-white text-base">Pakistan</h4>
+<p class="text-xs text-slate-400 mt-1">House 460 Street 105, I-8/4, Islamabad, 44790</p>
+<a class="mt-3 text-xs font-bold text-[#4ae176] hover:underline flex items-center gap-1" href="tel:+923335030930">
+<span class="material-symbols-outlined text-sm">call</span> +92 333 5030930
+          </a>
+</div>
+<!-- United Kingdom Hub -->
+<div class="p-6 rounded-2xl bg-[#0b101c] border border-white/10 flex flex-col items-center text-center">
+<span class="text-3xl mb-2">🇬🇧</span>
+<h4 class="font-bold text-white text-base">United Kingdom</h4>
+<p class="text-xs text-slate-400 mt-1">238 Lockwood Road, Huddersfield, England, HD1 3TG</p>
+<a class="mt-3 text-xs font-bold text-blue-400 hover:underline flex items-center gap-1" href="tel:+447417360028">
+<span class="material-symbols-outlined text-sm">call</span> +44 7417 360028
+          </a>
+</div>
+<!-- Australia Hub -->
+<div class="p-6 rounded-2xl bg-[#0b101c] border border-white/10 flex flex-col items-center text-center">
+<span class="text-3xl mb-2">🇦🇺</span>
+<h4 class="font-bold text-white text-base">Australia</h4>
+<p class="text-xs text-slate-400 mt-1">7 McCrady Street, Taylor, Canberra, ACT 2913</p>
+<a class="mt-3 text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1" href="tel:+61470302915">
+<span class="material-symbols-outlined text-sm">call</span> +61 470 302 915
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 12. HIGH-END FOOTER WITH OFFICIAL LOGO -->
+<footer class="w-full bg-[#05070d] text-white pt-16 pb-12 border-t border-white/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-white/10">
+<!-- Brand Info -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<a class="flex items-center gap-3" href="#">
+<div class="p-1 rounded-xl bg-[#0f172a] border border-white/10">
+<img alt="Rozgarcode Logo" class="h-10 w-10 object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpywdKLapYws5KlQH-O9eGvUPZB59VnVuj8fJ7So_hJcUEZbOXq8XkBLJ43BfMa7Ysf_dnuqtGCJKQ-4TTC4ofAWjxi-ilgSuN5xK3y1X2I2Rl7--_5v9DbPD_pQxbW1cZt0-p8W9yhubtOZEwd-Xhw3FsSzfvg1BFvl6fwiSxbetzup15qT3PY7nyrQ-rIwwAbmaNacz5sByOhL1y0P13M3otQpfb1tyg7YT58b5Th5ALUjy7VQq6DGkd6aWic18eJc4"/>
+</div>
+<span class="text-xl tracking-tight font-black font-display text-white">ROZGAR<span class="text-[#4ae176]">CODE</span></span>
+</a>
+<p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+            Rozgarcode is a full-spectrum digital agency and IT firm. We build bespoke websites, scale social reach, and architect resilient software for high-growth enterprises worldwide.
+          </p>
+<div class="flex items-center gap-3 pt-2">
+<a class="w-9 h-9 rounded-full bg-white/5 hover:bg-blue-600 flex items-center justify-center text-slate-300 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-9 h-9 rounded-full bg-white/5 hover:bg-[#4ae176] flex items-center justify-center text-slate-300 hover:text-black transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-9 h-9 rounded-full bg-white/5 hover:bg-blue-600 flex items-center justify-center text-slate-300 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</a>
+</div>
+</div>
+<!-- Services Column -->
+<div class="lg:col-span-3 flex flex-col gap-3">
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Our Services</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a class="hover:text-blue-400 transition-colors" href="#services">Custom Web Design &amp; Astra Pro</a></li>
+<li><a class="hover:text-[#4ae176] transition-colors" href="#services">Social Media Management &amp; Ads</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#services">Logo, 3D &amp; Brand Systems</a></li>
+<li><a class="hover:text-[#4ae176] transition-colors" href="#services">Custom Web &amp; Mobile Applications</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#services">Cloud Setup &amp; 24/7 IT Care</a></li>
+</ul>
+</div>
+<!-- Agency Column -->
+<div class="lg:col-span-2 flex flex-col gap-3">
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Agency</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a class="hover:text-white transition-colors" href="#portfolio">Case Studies</a></li>
+<li><a class="hover:text-white transition-colors" href="#framework">Our 4-Step Process</a></li>
+<li><a class="hover:text-white transition-colors" href="#matrix">All 16 Services</a></li>
+<li><a class="hover:text-white transition-colors" href="#reviews">Client Reviews</a></li>
+<li><a class="hover:text-white transition-colors" href="#contact">Contact Support</a></li>
+</ul>
+</div>
+<!-- Direct Contact Column -->
+<div class="lg:col-span-3 flex flex-col gap-3">
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Direct Contact</h4>
+<div class="text-sm text-slate-400 space-y-2">
+<p><strong class="text-white">Email:</strong> support@rozgarcode.com</p>
+<p><strong class="text-white">Direct WhatsApp:</strong> +92 333 5030930</p>
+<p><strong class="text-white">UK Line:</strong> +44 7417 360028</p>
+<p><strong class="text-white">Australia Line:</strong> +61 470 302 915</p>
+<p><strong class="text-white">Hours:</strong> 24/7 Technical Support</p>
+</div>
+</div>
+</div>
+<!-- Legal Row -->
+<div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+<p>© 2025 Rozgarcode Digital Agency &amp; IT Services. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-slate-300 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-slate-300 transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-slate-300 transition-colors" href="#">Security Standards</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Floating Sticky WhatsApp Button (Bottom Right) -->
+<a aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#4ae176] text-black shadow-[0_0_25px_rgba(74,225,118,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all" href="https://wa.me/923335030930" target="_blank">
+<span class="material-symbols-outlined text-3xl font-black">chat</span>
+</a>
+</body></html>
